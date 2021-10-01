@@ -2,24 +2,25 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fllaviacorreia/Backend.git"
+    "url": "git+https://github.com/fllaviacorreia/backend.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fllaviacorreia/Backend/issues"
+    "url": "https://github.com/fllaviacorreia/backend/issues"
   },
-  "homepage": "https://github.com/fllaviacorreia/Backend#readme",
+  "homepage": "https://github.com/fllaviacorreia/backend#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-load": "^1.1.16"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"
