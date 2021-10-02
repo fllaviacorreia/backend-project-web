@@ -1,28 +1,19 @@
 const express = require('express');
-const crypto = require('crypto');
-const conexao = require('./db/conexao');
 const rotas = express.Router();
+const usuariosControler = require('./controle/userControler');
 
 //listar usuários
-rotas.get('/users', async(req,res)=>{
-    const usuarios = await conexao('users').select('*');
-    res.json(usuarios); //retorno
-});
+rotas.get('/users', usuariosControler.list);
+//listar 1 usuário
+rotas.get('/users/:id', usuariosControler.show);
 
+//inserir usuário
+rotas.post('/users', usuariosControler.creat);
 
-//inserção de usuários
-// async await => usado para que não haja problemas de tempo de resposta do bd
-rotas.post('/users', async(req,res)=>{
-    const {name, email, idade, empresa} = req.body;
-    const id = crypto.randomBytes(4).toString('hex');
-    await conexao('users').insert({
-        id,
-        name,
-        email,
-        idade,
-        empresa
-    })
-    res.json({id}); //retorno
-});
+//alterar usuário
+rotas.put('/users/:id', usuariosControler.update);
+
+//deletar usuário
+rotas.delete('/users/:id', usuariosControler.delete);
 
 module.exports = rotas; //exportando as rotas
