@@ -15,6 +15,7 @@ module.exports = {
         const usuario = await conexao('users').where('id',id).select('*');
         return res.json(usuario); //retorno
     },
+    
     //inserção de usuários    
     async creat(req, res){
         const {name, email, idade, empresa} = req.body;

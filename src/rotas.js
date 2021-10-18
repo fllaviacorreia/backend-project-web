@@ -4,6 +4,7 @@ const usuariosControler = require('./controle/userControler');
 
 //listar usuários
 rotas.get('/users', usuariosControler.list);
+
 //listar 1 usuário
 rotas.get('/users/:id', usuariosControler.show);
 
